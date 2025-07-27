@@ -15,6 +15,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text);
+    overflow-x: hidden;
 }
 
 header {
@@ -126,6 +127,19 @@ section p{
   line-height: 1.6;
 }
 
+#about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: flex-start;
+}
+
+#about img{
+    max-width:300px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
 .cv-button {
   display: inline-block;
   margin-top: 1.5rem;
@@ -156,10 +170,8 @@ html{
 .project-grid{
     display:flex;
     justify-content: center;
-    min-height: 400px;
-    grid-template-columns: repeat(minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top:2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .project-card {
@@ -289,12 +301,43 @@ html{
 
 @media(max-width:600px){
     .project-grid{
-        gap:1.5rem;
-        padding: 0rem;
+       flex-direction: column;
+       align-items: center;
     }
     .project-card{
-        min-height: 250px;
-        padding: 1.2rem;
+        width: 90%;
+        height: auto;
+    }
+    header, section{
+        padding: 1.5rem;
+    }
+    .nav-links{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:0.5rem;
+    }
+    header .container{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo{
+        margin-bottom: 0.5rem;
+    }
+    .contact-links li{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .contact-links{
+        word-break: break-word;
+    }
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+    .animated-logo{
+        transform: scale(1.5) translate(10%, 20%);
     }
 }
 
